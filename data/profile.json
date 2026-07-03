@@ -1,0 +1,73 @@
+{
+  "profile": {
+    "name": "Adusumalli Venkata Abhiram",
+    "githubUser": "abhiram-1508",
+    "linkedinUrl": "https://www.linkedin.com/in/abhiram1508/",
+    "resumeUrl": "assets/Resume_Abhiram.pdf"
+  },
+  "featuredRepos": [
+    "LatticeGuardSBOM",
+    "Hyperlocal-Supply-Chain-Connector",
+    "Credit-Card-Fraud-Detection-system",
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control",
+    "AR---Heritage-site",
+    "Task-Management-system"
+  ],
+  "repoSummaries": {
+    "LatticeGuardSBOM": "Quantum-secure Software Bill of Materials system with hybrid signatures, typosquat detection, risk scoring, and AST malware scanning.",
+    "Hyperlocal-Supply-Chain-Connector": "AI-powered farm-to-restaurant ecosystem connecting farmers, restaurants, and transporters with voice workflows, tracking, and settlements.",
+    "Credit-Card-Fraud-Detection-system": "ML-powered fraud detection dashboard with a Python/Flask backend, Random Forest model, analytics, and transaction simulation.",
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control": "Privacy-preserving role-based access control framework that authorizes users without exposing sensitive credentials.",
+    "AR---Heritage-site": "Web experience for heritage exploration with a live deployment and TypeScript-based interface.",
+    "Task-Management-system": "Secure task dashboard with authentication, priority filtering, and real-time status visibility."
+  },
+  "experiences": [
+    {
+      "period": "May 2026 - Jul 2026",
+      "title": "Software Development and App Development Intern - GetSetAI Innovations",
+      "summary": "Remote project-based internship focused on modern software, app deployment, infrastructure, frontend, and backend development."
+    },
+    {
+      "period": "Jun 2025 - Jul 2025",
+      "title": "Frontend Development Intern - Trinwo Solutions",
+      "summary": "Resolved recurring UI crashes, improved render performance by 30%, and contributed as project lead for a Task Management System."
+    },
+    {
+      "period": "2023 - 2027",
+      "title": "B.Tech CSE - SRM Institute of Science and Technology, AP",
+      "summary": "Coursework includes Data Structures, DBMS, Operating Systems, OOP, and Machine Learning."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "RHCSA",
+      "summary": "Red Hat Certified System Administrator - Mar 2026",
+      "url": "assets/certificates/Redhat Certificate.pdf"
+    },
+    {
+      "title": "Red Hat Cloud-native",
+      "summary": "Certified Developer in Cloud-native Applications - Jun 2026",
+      "url": "assets/certificates/Redhat Containers certificate.pdf"
+    },
+    {
+      "title": "Oracle Java SE 17",
+      "summary": "Oracle Certified Professional - Feb 2026",
+      "url": "assets/certificates/Java certificate.pdf"
+    },
+    {
+      "title": "MongoDB Associate Developer",
+      "summary": "Issued by MongoDB - May 2026",
+      "url": "assets/certificates/MongoDB Certificate.pdf"
+    },
+    {
+      "title": "SAP Generative AI Developer",
+      "summary": "SAP AI Core, AI Launchpad, generative AI hub - Apr 2026",
+      "url": "assets/certificates/SAP Certification.pdf"
+    },
+    {
+      "title": "ET-AI Hackathon 2026",
+      "summary": "Semi-finalist and recognised among top teams from SRM University, Amaravati",
+      "url": "assets/certificates/ET-AI Hackathon 2026 Semi Finalists.pdf"
+    }
+  ]
+}

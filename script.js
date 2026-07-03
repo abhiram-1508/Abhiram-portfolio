@@ -1,5 +1,5 @@
 ﻿const canvas = document.querySelector("#neural-canvas");
-const cards = document.querySelectorAll(".project-card, .cert-card");
+let cards = document.querySelectorAll(".project-card, .cert-card");
 let pointerX = 0;
 let pointerY = 0;
 
@@ -214,3 +214,137 @@ document.addEventListener("scroll", () => {
 
 
 
+
+const GITHUB_USER = "abhiram-1508";
+const FALLBACK_PROFILE_DATA = {
+  featuredRepos: [
+    "LatticeGuardSBOM",
+    "Hyperlocal-Supply-Chain-Connector",
+    "Credit-Card-Fraud-Detection-system",
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control",
+    "AR---Heritage-site",
+    "Task-Management-system"
+  ],
+  repoSummaries: {
+    LatticeGuardSBOM: "Quantum-secure Software Bill of Materials system with hybrid signatures, typosquat detection, risk scoring, and AST malware scanning.",
+    "Hyperlocal-Supply-Chain-Connector": "AI-powered farm-to-restaurant ecosystem connecting farmers, restaurants, and transporters with voice workflows, tracking, and settlements.",
+    "Credit-Card-Fraud-Detection-system": "ML-powered fraud detection dashboard with a Python/Flask backend, Random Forest model, analytics, and transaction simulation.",
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control": "Privacy-preserving role-based access control framework that authorizes users without exposing sensitive credentials.",
+    "AR---Heritage-site": "Web experience for heritage exploration with a live deployment and TypeScript-based interface.",
+    "Task-Management-system": "Secure task dashboard with authentication, priority filtering, and real-time status visibility."
+  }
+};
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function niceName(name = "") {
+  return name.replaceAll("-", " ").replace(/\s+/g, " ").trim();
+}
+
+function projectTag(repo) {
+  const parts = [repo.language, repo.homepage ? "Deployed" : null, repo.stargazers_count ? `${repo.stargazers_count} stars` : null]
+    .filter(Boolean);
+  return parts.length ? parts.join(" - ") : "GitHub project";
+}
+
+function enhanceDynamicCards() {
+  cards = document.querySelectorAll(".project-card, .cert-card");
+  cards.forEach(attachTilt);
+  document.querySelectorAll(".project-card, .cert-card, .achievement-card").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--card-x", `${event.clientX - rect.left}px`);
+      card.style.setProperty("--card-y", `${event.clientY - rect.top}px`);
+    });
+  });
+}
+
+async function getJson(url, fallback = null) {
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function renderProjects(repos, profileData) {
+  const grid = document.querySelector(".project-grid");
+  if (!grid || !repos?.length) return;
+
+  const featured = profileData.featuredRepos || FALLBACK_PROFILE_DATA.featuredRepos;
+  const summaries = { ...FALLBACK_PROFILE_DATA.repoSummaries, ...(profileData.repoSummaries || {}) };
+  const repoMap = new Map(repos.filter((repo) => !repo.fork).map((repo) => [repo.name, repo]));
+  const ordered = featured.map((name) => repoMap.get(name)).filter(Boolean);
+  const extras = repos
+    .filter((repo) => !repo.fork && !featured.includes(repo.name))
+    .sort((a, b) => new Date(b.pushed_at || b.updated_at) - new Date(a.pushed_at || a.updated_at));
+  const selected = [...ordered, ...extras].slice(0, 6);
+
+  grid.innerHTML = selected.map((repo, index) => {
+    const description = summaries[repo.name] || repo.description || "A public GitHub project from Abhiram's engineering portfolio.";
+    const liveLink = repo.homepage ? `<a href="${escapeHtml(repo.homepage)}" target="_blank" rel="noreferrer">Live</a>` : "";
+    const linkBlock = liveLink
+      ? `<div class="dual-links"><a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">Repo</a>${liveLink}</div>`
+      : `<a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">Open repository</a>`;
+
+    return `
+      <article class="project-card ${index < 2 ? "featured" : ""}">
+        <span class="project-tag">${escapeHtml(projectTag(repo))}</span>
+        <h3>${escapeHtml(niceName(repo.name))}</h3>
+        <p>${escapeHtml(description)}</p>
+        ${linkBlock}
+      </article>`;
+  }).join("");
+}
+
+function renderExperiences(experiences = []) {
+  const timeline = document.querySelector(".timeline");
+  if (!timeline || !experiences.length) return;
+  timeline.innerHTML = experiences.map((item) => `
+    <article>
+      <time>${escapeHtml(item.period)}</time>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.summary)}</p>
+    </article>`).join("");
+}
+
+function renderCertifications(certifications = []) {
+  const grid = document.querySelector(".cert-grid");
+  if (!grid || !certifications.length) return;
+  grid.innerHTML = certifications.map((cert) => `
+    <a class="cert-card" href="${escapeHtml(cert.url)}" target="_blank" rel="noreferrer">
+      <strong>${escapeHtml(cert.title)}</strong>
+      <span>${escapeHtml(cert.summary)}</span>
+    </a>`).join("");
+}
+
+function updateStats(repoCount, certCount) {
+  const stats = document.querySelectorAll(".hero-stats div");
+  if (stats[0] && repoCount) stats[0].innerHTML = `<dt>${repoCount}</dt><dd>Public repos</dd>`;
+  if (stats[1] && certCount) stats[1].innerHTML = `<dt>${certCount}+</dt><dd>Major credentials</dd>`;
+}
+
+async function loadLivePortfolioData() {
+  const profileData = await getJson("data/profile.json", FALLBACK_PROFILE_DATA);
+  const [repos, githubProfile] = await Promise.all([
+    getJson(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`, []),
+    getJson(`https://api.github.com/users/${GITHUB_USER}`, null)
+  ]);
+
+  if (repos.length) renderProjects(repos, profileData);
+  renderExperiences(profileData.experiences);
+  renderCertifications(profileData.certifications);
+  updateStats(githubProfile?.public_repos || repos.length, profileData.certifications?.length);
+  enhanceDynamicCards();
+}
+
+loadLivePortfolioData();
