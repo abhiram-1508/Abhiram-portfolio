@@ -14,12 +14,13 @@
     "AR---Heritage-site",
   ],
   "repoSummaries": {
+     "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control": "Privacy-preserving role-based access control framework that authorizes users without exposing sensitive credentials.",
+    "Task-Management-system": "Secure task dashboard with authentication, priority filtering, and real-time status visibility."
     "LatticeGuardSBOM": "Quantum-secure Software Bill of Materials system with hybrid signatures, typosquat detection, risk scoring, and AST malware scanning.",
     "Hyperlocal-Supply-Chain-Connector": "AI-powered farm-to-restaurant ecosystem connecting farmers, restaurants, and transporters with voice workflows, tracking, and settlements.",
     "Credit-Card-Fraud-Detection-system": "ML-powered fraud detection dashboard with a Python/Flask backend, Random Forest model, analytics, and transaction simulation.",
-    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control": "Privacy-preserving role-based access control framework that authorizes users without exposing sensitive credentials.",
     "AR---Heritage-site": "Web experience for heritage exploration with a live deployment and TypeScript-based interface.",
-    "Task-Management-system": "Secure task dashboard with authentication, priority filtering, and real-time status visibility."
+  
   },
   "experiences": [
     {
