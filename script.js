@@ -248,8 +248,8 @@ function niceName(name = "") {
   return name.replaceAll("-", " ").replace(/\s+/g, " ").trim();
 }
 
-function projectTag(repo) {
-  const parts = [repo.language, repo.homepage ? "Deployed" : null, repo.stargazers_count ? `${repo.stargazers_count} stars` : null]
+function projectTag(repo, homepage = repo.homepage) {
+  const parts = [repo.language, homepage ? "Deployed" : null, repo.stargazers_count ? `${repo.stargazers_count} stars` : null]
     .filter(Boolean);
   return parts.length ? parts.join(" - ") : "GitHub project";
 }
@@ -291,14 +291,16 @@ function renderProjects(repos, profileData) {
 
   grid.innerHTML = selected.map((repo, index) => {
     const description = summaries[repo.name] || repo.description || "A public GitHub project from Abhiram's engineering portfolio.";
-    const liveLink = repo.homepage ? `<a href="${escapeHtml(repo.homepage)}" target="_blank" rel="noreferrer">Live</a>` : "";
+    const configuredHomepage = profileData.repoHomepages?.[repo.name];
+    const homepage = configuredHomepage || repo.homepage;
+    const liveLink = homepage ? `<a href="${escapeHtml(homepage)}" target="_blank" rel="noreferrer">Live</a>` : "";
     const linkBlock = liveLink
       ? `<div class="dual-links"><a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">Repo</a>${liveLink}</div>`
       : `<a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noreferrer">Open repository</a>`;
 
     return `
       <article class="project-card ${index < 2 ? "featured" : ""}">
-        <span class="project-tag">${escapeHtml(projectTag(repo))}</span>
+        <span class="project-tag">${escapeHtml(projectTag(repo, homepage))}</span>
         <h3>${escapeHtml(niceName(repo.name))}</h3>
         <p>${escapeHtml(description)}</p>
         ${linkBlock}
@@ -348,3 +350,4 @@ async function loadLivePortfolioData() {
 }
 
 loadLivePortfolioData();
+

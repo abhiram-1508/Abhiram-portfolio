@@ -69,5 +69,9 @@
       "summary": "Semi-finalist and recognised among top teams from SRM University, Amaravati",
       "url": "assets/certificates/ET-AI Hackathon 2026 Semi Finalists.pdf"
     }
-  ]
+  ],
+  "repoHomepages": {
+    "Credit-Card-Fraud-Detection-system": "https://credit-card-fraud-detection-system-jet.vercel.app",
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control": "https://privaccess-app.onrender.com"
+  }
 }
