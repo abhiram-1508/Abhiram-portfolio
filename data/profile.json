@@ -6,12 +6,12 @@
     "resumeUrl": "assets/Resume_Abhiram.pdf"
   },
   "featuredRepos": [
+    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control",
+    "Task-Management-system"
     "LatticeGuardSBOM",
     "Hyperlocal-Supply-Chain-Connector",
     "Credit-Card-Fraud-Detection-system",
-    "PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control",
     "AR---Heritage-site",
-    "Task-Management-system"
   ],
   "repoSummaries": {
     "LatticeGuardSBOM": "Quantum-secure Software Bill of Materials system with hybrid signatures, typosquat detection, risk scoring, and AST malware scanning.",
