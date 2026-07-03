@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Adusumalli Venkata Abhiram, a CSE student and full-stack/security-focused developer building AI, cryptography, and web products."
+    />
+    <title>Adusumalli Venkata Abhiram | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">AV</span>
+        <span>Abhiram</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">CSE student - Full-stack builder - Security explorer</p>
+          <h1>Adusumalli Venkata Abhiram</h1>
+          <p class="hero-lede">
+            I build ambitious software across AI, cryptography, web systems, and automation: from quantum-secure SBOMs to farm-to-restaurant supply chain platforms.
+          </p>
+          <div class="hero-actions" aria-label="Profile actions">
+            <a class="button primary" href="assets/Resume_Abhiram.pdf" target="_blank" rel="noreferrer">View Resume</a>
+            <a class="button ghost" href="https://github.com/abhiram-1508" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button ghost" href="https://www.linkedin.com/in/abhiram1508/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>10</dt><dd>Public repos</dd></div>
+            <div><dt>6+</dt><dd>Major credentials</dd></div>
+            <div><dt>2027</dt><dd>B.Tech CSE</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-label="Portrait and profile highlights">
+          <div class="portrait-stage">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <img src="assets/abhiram-full-length.jpeg" alt="Adusumalli Venkata Abhiram" />
+            <div class="floating-chip chip-top">AI + ML</div>
+            <div class="floating-chip chip-bottom">Red Hat - MongoDB - Oracle</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell marquee-panel" aria-label="Featured strengths">
+        <div class="marquee-track">
+          <span>Quantum-secure systems</span>
+          <span>Zero-knowledge access control</span>
+          <span>Full-stack web platforms</span>
+          <span>Linux and containers</span>
+          <span>Machine learning dashboards</span>
+        </div>
+      </section>
+
+
+      <section class="section-shell hackathon-section" id="hackathon">
+        <div class="achievement-card">
+          <div class="achievement-orb" aria-hidden="true"></div>
+          <div>
+            <p class="eyebrow">Hackathon highlight</p>
+            <h2>ET-AI Hackathon 2026 Semi-Finalist</h2>
+            <p>
+              Recognised among the top teams from SRM University, Amaravati and advanced as a
+              semi-finalist in the ET-AI Hackathon 2026. The recognition celebrates innovation,
+              collaborative execution, and a commitment to building meaningful AI solutions.
+            </p>
+          </div>
+          <a class="button primary" href="assets/certificates/ET-AI Hackathon 2026 Semi Finalists.pdf" target="_blank" rel="noreferrer">View Hackathon Certificate</a>
+        </div>
+      </section>
+      <section class="section-shell split-section" id="about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Developer with a security-first imagination.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            I am pursuing B.Tech in Computer Science and Engineering at SRM Institute of Science and
+            Technology, AP. My strongest work sits where product thinking meets infrastructure:
+            AI-powered applications, secure authorization, cryptographic attestation, and polished
+            dashboards.
+          </p>
+          <p>
+            During my frontend internship at Trinwo Solutions, I resolved recurring UI crashes,
+            improved component rendering performance, and led a Task Management System project.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work from GitHub</h2>
+          <a href="https://github.com/abhiram-1508?tab=repositories" target="_blank" rel="noreferrer">See all repositories</a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <span class="project-tag">Cryptography - TypeScript</span>
+            <h3>LatticeGuard SBOM</h3>
+            <p>
+              Quantum-secure Software Bill of Materials system using NIST FIPS 204 ML-DSA-65,
+              hybrid signatures, typosquat detection, risk scoring, and AST malware scanning.
+            </p>
+            <a href="https://github.com/abhiram-1508/LatticeGuardSBOM" target="_blank" rel="noreferrer">Open repository</a>
+          </article>
+          <article class="project-card featured">
+            <span class="project-tag">AI - Full-stack - TypeScript</span>
+            <h3>Hyperlocal Supply Chain Connector</h3>
+            <p>
+              Farm-to-restaurant ecosystem connecting farmers, restaurants, and transporters with
+              AI-powered voice workflows, real-time tracking, and automated settlements.
+            </p>
+            <a href="https://github.com/abhiram-1508/Hyperlocal-Supply-Chain-Connector" target="_blank" rel="noreferrer">Open repository</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">ML - Flask - Dashboard</span>
+            <h3>Credit Card Fraud Detection</h3>
+            <p>
+              FraudShield combines a Python/Flask backend, scikit-learn Random Forest model, Chart.js
+              analytics, and a transaction simulator.
+            </p>
+            <a href="https://github.com/abhiram-1508/Credit-Card-Fraud-Detection-system" target="_blank" rel="noreferrer">Open repository</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Zero-knowledge - HTML</span>
+            <h3>PrivAccess</h3>
+            <p>
+              Privacy-preserving role-based access control framework that authorizes users without
+              exposing sensitive credentials.
+            </p>
+            <a href="https://github.com/abhiram-1508/PrivAccess-A-Zero-Knowledge-Framework-for-Role-Based-Access-Control" target="_blank" rel="noreferrer">Open repository</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">AR - TypeScript - Deployed</span>
+            <h3>AR Heritage Site</h3>
+            <p>
+              A web experience for heritage exploration with a live deployment and TypeScript-based
+              interface.
+            </p>
+            <div class="dual-links">
+              <a href="https://github.com/abhiram-1508/AR---Heritage-site" target="_blank" rel="noreferrer">Repo</a>
+              <a href="https://web-completion-hub-16.vercel.app" target="_blank" rel="noreferrer">Live</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">PHP - Auth - Product</span>
+            <h3>Task Management System</h3>
+            <p>
+              Secure authentication, dashboard flows, priority filtering, and real-time status
+              visibility for team task tracking.
+            </p>
+            <a href="https://github.com/abhiram-1508/Task-Management-system" target="_blank" rel="noreferrer">Open repository</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell skills-section" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Skill stack</p>
+          <h2>Tools I use to ship ideas</h2>
+        </div>
+        <div class="skill-cloud">
+          <span>C</span><span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span>
+          <span>TypeScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>MySQL</span>
+          <span>MongoDB</span><span>OpenCV</span><span>MediaPipe</span><span>NumPy</span><span>Pandas</span>
+          <span>Git</span><span>Linux</span><span>Containers</span><span>Machine Learning</span><span>Cryptography</span>
+        </div>
+      </section>
+
+      <section class="section-shell timeline-section">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>Work and education</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <time>May 2026 - Jul 2026</time>
+            <h3>Software Development and App Development Intern - GetSetAI Innovations</h3>
+            <p>Remote project-based internship focused on modern software, app deployment, infrastructure, frontend, and backend development.</p>
+          </article>
+          <article>
+            <time>Jun 2025 - Jul 2025</time>
+            <h3>Frontend Development Intern - Trinwo Solutions</h3>
+            <p>Resolved recurring UI crashes, improved render performance by 30%, and contributed as project lead for a Task Management System.</p>
+          </article>
+          <article>
+            <time>2023 - 2027</time>
+            <h3>B.Tech CSE - SRM Institute of Science and Technology, AP</h3>
+            <p>Coursework includes Data Structures, DBMS, Operating Systems, OOP, and Machine Learning.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell" id="certifications">
+        <div class="section-heading">
+          <p class="eyebrow">Credentials</p>
+          <h2>Certifications and wins</h2>
+        </div>
+        <div class="cert-grid">
+          <a class="cert-card" href="assets/certificates/Redhat Certificate.pdf" target="_blank" rel="noreferrer"><strong>RHCSA</strong><span>Red Hat Certified System Administrator - Mar 2026</span></a>
+          <a class="cert-card" href="assets/certificates/Redhat Containers certificate.pdf" target="_blank" rel="noreferrer"><strong>Red Hat Cloud-native</strong><span>Certified Developer in Cloud-native Applications - Jun 2026</span></a>
+          <a class="cert-card" href="assets/certificates/Java certificate.pdf" target="_blank" rel="noreferrer"><strong>Oracle Java SE 17</strong><span>Oracle Certified Professional - Feb 2026</span></a>
+          <a class="cert-card" href="assets/certificates/MongoDB Certificate.pdf" target="_blank" rel="noreferrer"><strong>MongoDB Associate Developer</strong><span>Issued by MongoDB - May 2026</span></a>
+          <a class="cert-card" href="assets/certificates/SAP Certification.pdf" target="_blank" rel="noreferrer"><strong>SAP Generative AI Developer</strong><span>SAP AI Core, AI Launchpad, generative AI hub - Apr 2026</span></a>
+          <a class="cert-card" href="assets/certificates/ET-AI Hackathon 2026 Semi Finalists.pdf" target="_blank" rel="noreferrer"><strong>ET-AI Hackathon 2026</strong><span>Semi-finalist and recognised among top teams from SRM University, Amaravati</span></a>
+        </div>
+      </section>
+
+      <section class="section-shell contact-section" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build something that feels impossible at first.</h2>
+        </div>
+        <div class="contact-card">
+          <a href="mailto:avabhiram001@gmail.com">avabhiram001@gmail.com</a>
+          <a href="tel:+919390850058">+91 93908 50058</a>
+          <a href="https://github.com/abhiram-1508" target="_blank" rel="noreferrer">github.com/abhiram-1508</a>
+          <a href="https://www.linkedin.com/in/abhiram1508/" target="_blank" rel="noreferrer">linkedin.com/in/abhiram1508</a>
+          <span>Andhra Pradesh, India</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built for Adusumalli Venkata Abhiram</span>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
